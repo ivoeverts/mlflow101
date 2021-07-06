@@ -24,7 +24,7 @@ print("Feature Data: \n", iris.data[::50], "\nTarget Classes: \n", iris.target[:
 # COMMAND ----------
 
 model_1 = linear_model.LogisticRegression(max_iter=200)
-model_1.fit(iris.data, iris.target)
+model_1.fit(pd.DataFrame(iris.data, columns=iris.feature_names), iris.target)
 
 # COMMAND ----------
 
@@ -34,7 +34,7 @@ model_1.fit(iris.data, iris.target)
 # COMMAND ----------
 
 model_2 = tree.DecisionTreeClassifier()
-model_2.fit(iris.data, iris.target)
+model_2.fit(pd.DataFrame(iris.data, columns=iris.feature_names), iris.target)
 
 # COMMAND ----------
 
